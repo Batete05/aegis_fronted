@@ -1,7 +1,10 @@
+import { useNavigation, useRoute } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
-
+import Dashboard from '../Dashboard/Dashboard';
 const LoginScreen = () => {
+  const navigation= useNavigation();
+  const router= useRoute()
   return (
     <View style={styles.container}>
       <Text style={styles.title}>English</Text>
@@ -18,11 +21,11 @@ const LoginScreen = () => {
         secureTextEntry
       />
       
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate(Dashboard)}}>
         <Text style={styles.buttonText}>Continue</Text>
       </TouchableOpacity>
       
-      <TouchableOpacity>
+      <TouchableOpacity >
         <Text style={styles.forgotPassword}>Forgot password?</Text>
       </TouchableOpacity>
       
