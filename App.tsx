@@ -6,8 +6,10 @@ import Navigation from "./navigation/navigation";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack';
 import Register from './screens/auth/register';
+import Dashboard from "./screens/Dashboard/Dashboard";
 SplashScreen.preventAutoHideAsync();
 const Stack = createStackNavigator();
+
 export default function SplashScreenComponent() {
   useEffect(() => {
     const loadApp = async () => {
@@ -23,7 +25,9 @@ export default function SplashScreenComponent() {
        <Stack.Navigator initialRouteName="Welcome" screenOptions={{headerShown: false}}>
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="Dashboard" component={Dashboard} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
